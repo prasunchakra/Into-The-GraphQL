@@ -1,5 +1,4 @@
 let http = require('http');
-let dt = require('./myfirstmodule');
 let t = 0;
 let t2 = 0;
 
@@ -25,12 +24,12 @@ function f(f1,f2){
 }
 // 3: Normal Function Statement
 function f1() {
-    console.log("Normal Function Statement" + __dirname);
+    console.log("Normal Function: " + __dirname);
 }
 
 // 4: Function Expression
 let f2 = function () {
-    console.log("Function Expression"+__filename);
+    console.log("Function Expression : "+__filename);
 };
 
 f(f1,f2);
@@ -38,8 +37,6 @@ f(f1,f2);
 //6: Server Creation
 http.createServer(function (req, res) {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write("Current Date aand Time " + dt.myDateTime() );
-    res.write("<br> req " + req.url );
-    res.end();
+    res.end('Hell O World!');
 }).listen(8080);
 console.log('Server Running at http://localhost:8080/');
