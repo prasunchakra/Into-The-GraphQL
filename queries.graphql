@@ -1,0 +1,21 @@
+mutation {
+  createFriend(input: {firstName: "Light", lastName: "Yagami", language: "Japanese", gender: MALE, age: 25, contact: [{firstName: "Ryuk", secondName: "Shinigami"}, {firstName: "Rim", secondName: "Shinigami"}]}) {
+    id
+    contact {
+      firstName
+    }
+  }
+}
+
+
+query {
+  getfriend(id: "d84fbc6a868ca031d9e5") {
+    firstName
+    lastName
+    age
+    gender
+    contact {
+      firstName
+    }
+  }
+}
