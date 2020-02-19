@@ -22,8 +22,16 @@ enum Gender {
     FEMALE
     OTHER
 }
+type Competitor{
+    id: ID
+    firstName: String
+    lastName: String
+    team: String
+}
 type Query{
     getfriend(id:ID!): Friend
+    getallfriend:[Friend]
+    getcompetitor: [Competitor]
 }
 input ContactInput{
     firstName: String
@@ -41,6 +49,8 @@ input FriendInput{
 }
 type Mutation{
     createFriend(input: FriendInput): Friend
+    updateFriend(input: FriendInput): Friend
+    deleteFriend(id: ID!): String
 }
 `)
 
